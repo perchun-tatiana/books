@@ -5,6 +5,7 @@ import { AuthController } from './auth.controller';
 import { jwtConstants } from './constants';
 import { UserService } from './prisma-users/prisma-users.service';
 import { PrismaService } from 'src/prisma/prisma.service';
+
 @Module({
   imports: [
     JwtModule.register({
