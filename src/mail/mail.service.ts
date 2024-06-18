@@ -5,16 +5,13 @@ import { Injectable } from '@nestjs/common';
 export class MailService {
   constructor(private mailerService: MailerService) {}
 
-  async sendUserConfirmation(email: string, id: number, comment: string) {
-  console.log('email',email)
+  async sendUserConfirmation(email: string) {
 
    return await this.mailerService.sendMail({
       to: email,
-      subject: 'Answer',
+      subject: 'Confirm email',
       template: './request.pug',
       context: {
-        id,
-        comment,
       },
     });
   }

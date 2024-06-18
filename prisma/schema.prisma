@@ -14,13 +14,19 @@ datasource db {
 }
 
 
-model Request {
+model Book {
   id    Int     @default(autoincrement()) @id
-  email String 
-  name  String
-  status String
-  message String
-  comment String?
-  created_at DateTime
-  updated_at DateTime?
+  title String
+  author String
+  publicationDate DateTime
+  genres String
+}
+
+
+model User {
+  id    Int     @default(autoincrement()) @id
+  email String
+  username String  @unique
+  password String
+  role String
 }
